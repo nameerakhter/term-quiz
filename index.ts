@@ -39,6 +39,11 @@ async function askQuestions(quizQuestions: Question[]) {
       return process.exit(0);
     }
 
+    const s = p.spinner();
+    s.start();
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    s.stop();
+
     if (answer === question.options[question.correctAnswerIndex]) {
       p.note(color.green("Correct!"), "Result");
       score++;
@@ -51,11 +56,6 @@ async function askQuestions(quizQuestions: Question[]) {
         "Result"
       );
     }
-
-    const s = p.spinner();
-    s.start();
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    s.stop();
   }
 }
 
