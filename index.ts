@@ -6,7 +6,6 @@ interface MultipleChoiceQuestion {
   options: string[];
   correctAnswerIndex: number;
 }
-
 let score = 0;
 
 class Question {
@@ -61,7 +60,18 @@ async function askQuestions(quizQuestions: Question[]) {
 }
 
 async function main() {
-  p.intro(`${color.bgMagenta(color.black("Welcome to my CLI"))}`);
+  console.log(
+    color.cyan(`
+		████████╗███████╗██████╗ ███╗   ███╗      ██████╗ ██╗   ██╗██╗███████╗
+		╚══██╔══╝██╔════╝██╔══██╗████╗ ████║     ██╔═══██╗██║   ██║██║╚══███╔╝
+		   ██║   █████╗  ██████╔╝██╔████╔██║     ██║   ██║██║   ██║██║  ███╔╝ 
+		   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║     ██║▄▄ ██║██║   ██║██║ ███╔╝  
+		   ██║   ███████╗██║  ██║██║ ╚═╝ ██║     ╚██████╔╝╚██████╔╝██║███████╗
+		   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝      ╚══▀▀═╝  ╚═════╝ ╚═╝╚══════╝
+		`)
+  );
+
+  p.intro(`${color.bgMagenta(color.black("Welcome to term-quiz"))}`);
 
   const quizQuestions: Question[] = [
     new Question({
